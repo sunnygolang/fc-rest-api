@@ -1,13 +1,33 @@
-POST http://localhost:8000/products HTTP/1.1
+POST http://localhost:8000/products
+Authorization: /users/generate_token -> route
 Content-Type: application/json
 
 {
-    "name": "Product Test",
-    "price": 100.00
+    "name": "Phone",
+    "price": 1500.00
 }
-
 
 ###
 
-GET http://localhost:8000/products/b365c466-7c0c-4c01-97d5-d82c65eb8299 HTTP/1.1
+GET http://localhost:8000/products?page=1&limit=2
+Authorization: /users/generate_token -> route
+
+###
+
+GET http://localhost:8000/products/0fb74d4f-2e12-45e7-a20c-923a1a694e0a
+Authorization: /users/generate_token -> route
+
+###
+
+PUT http://localhost:8000/products/0fb74d4f-2e12-45e7-a20c-923a1a694e0a
+Authorization: /users/generate_token -> route
 Content-Type: application/json
+
+{
+    "name": "Phone Updated",
+    "price": 1700.00
+}
+
+###
+
+DELETE  http://localhost:8000/products/0fb74d4f-2e12-45e7-a20c-923a1a694e0a
